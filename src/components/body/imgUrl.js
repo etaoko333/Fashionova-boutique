@@ -26,10 +26,10 @@ export const imgMenArr = [
 ]
 
 export const imgWomenArr = [
-    {img:'https://assets.myntassets.com/f_webp,w_140,c_limit,fl_progressive,dpr_2.0/assets/images/2022/3/4/398e2bdd-f4b1-4b50-b11f-18a8a5e635f41646397602565-W-_Biba.jpg'},
-    {img:'https://assets.myntassets.com/f_webp,w_140,c_limit,fl_progressive,dpr_2.0/assets/images/2022/3/4/7b7ef71d-0c08-4833-8003-482df6d854971646397602518-Libas-_Varanga.jpg'},
-    {img:'https://assets.myntassets.com/f_webp,w_140,c_limit,fl_progressive,dpr_2.0/assets/images/2022/3/4/ff002c7e-3805-422c-88ca-47652697c3d41646397602509-Inddus-_Varanga.jpg'},
-    {img:'https://assets.myntassets.com/f_webp,w_140,c_limit,fl_progressive,dpr_2.0/assets/images/2022/3/4/398e2bdd-f4b1-4b50-b11f-18a8a5e635f41646397602565-W-_Biba.jpg'},
+    {img:'https://fashionova-bucket.s3.us-west-1.amazonaws.com/Screenshot_20250205-185553_1.jpg'},
+    {img:'https://fashionova-bucket.s3.us-west-1.amazonaws.com/Screenshot_20250205-185643_1.jpg'},
+    {img:'https://fashionova-bucket.s3.us-west-1.amazonaws.com/Screenshot_20250205-185710_1.jpg'},
+    {img:'https://fashionova-bucket.s3.us-west-1.amazonaws.com/Screenshot_20250205-185749_1.jpg'},
     {img:'https://assets.myntassets.com/f_webp,w_140,c_limit,fl_progressive,dpr_2.0/assets/images/2022/3/4/b6c57a9e-da1b-49f1-8c6a-a3840550feb81646397602558-Vero_moda-_AND-_and_More-All_Whitesea-.png'},
     {img:'https://assets.myntassets.com/f_webp,w_140,c_limit,fl_progressive,dpr_2.0/assets/images/2022/3/4/29c5afae-408e-4574-88f1-ff0b2ea066241646397602502-HRX-_Puma_-_More.jpg'}
 ]
