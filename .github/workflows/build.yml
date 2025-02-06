@@ -38,8 +38,7 @@ jobs:
 
       - name: Docker Build and Push
         run: |
-          docker build -t fashionova-boutique .
-          docker tag fashionova-boutique:latest sholly333/boutique-store:latest
+          docker build -t sholly333/boutique-store:latest .
           docker push sholly333/boutique-store:latest
         env:
           DOCKER_CLI_ACI: 1
@@ -48,3 +47,19 @@ jobs:
         run: |
           docker-scout quickview sholly333/boutique-store:latest
           docker-scout cves sholly333/boutique-store:latest
+
+  deploy:
+    needs: build
+    runs-on: self-hosted
+    steps:
+      - name: Docker Pull Image
+        run: docker pull sholly333/boutique-store:latest
+
+      - name: Deploy to Container
+        run: docker run -d --name game -p 3000:3000 sholly333/boutique-store:latest
+
+      - name: Update Kubeconfig
+        run: aws eks --region us-west-1 update-kubeconfig --name EKS_CLOUD
+
+      - name: Deploy to Kubernetes
+        run: kubectl apply -f deployment-service.yml
