@@ -27,17 +27,12 @@ jobs:
       - name: Docker Login
         run: docker login -u ${{ secrets.DOCKERHUB_USERNAME }} -p ${{ secrets.DOCKERHUB_TOKEN }}
 
-      - name: Install Docker Scout from GitHub Releases
+      - name: Install Docker Scout CLI Plugin
         run: |
-          # Download the Docker Scout binary
-          curl -L https://github.com/docker/scout-cli/releases/download/v0.1.0/docker-scout-linux-amd64 -o /usr/local/bin/docker-scout
-          # Check if the file is downloaded correctly and inspect it
-          ls -l /usr/local/bin/docker-scout
-          file /usr/local/bin/docker-scout
-          # If the file is correctly downloaded, make it executable
-          sudo chmod +x /usr/local/bin/docker-scout
-          # Confirm if docker-scout is executable
-          /usr/local/bin/docker-scout --version
+          # Install Docker Scout plugin via Docker CLI
+          curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo tee /etc/apt/trusted.gpg.d/docker.asc
+          sudo apt-get update
+          sudo apt-get install docker-cli-plugin-docker-scout
 
       - name: Docker Scout Scan
         run: |
