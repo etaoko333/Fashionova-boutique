@@ -5,11 +5,11 @@ function WomenBody() {
   return (
     <div className='col text-center'>
     <img className='col-10 mt-4'
-      src='https://i.pinimg.com/originals/d9/26/5e/d9265e0a753874943cf6b9a289105629.jpg'
+      src='https://fashionova-bucket.s3.us-west-1.amazonaws.com/Screenshot_20250205-185749_1.jpg'
       height={'350px'} alt='banner' />
 
     <img className='col-11 mt-4 m-4'
-      src='https://assets.myntassets.com/f_webp,w_980,c_limit,fl_progressive,dpr_2.0/assets/images/2022/3/11/d153ee75-3464-44f7-9041-4afd29d95a751646993148101-Unbelievable-Deals.jpg'
+      src='https://fashionova-bucket.s3.us-west-1.amazonaws.com/Screenshot_20250205-185553_1.jpg'
       height={'150px'} alt='banner' />
 
     <div className='col-12 p-2'>
@@ -20,7 +20,7 @@ function WomenBody() {
     </div>
 
     <img className='col-11 mt-4 m-4'
-      src='https://assets.myntassets.com/f_webp,w_980,c_limit,fl_progressive,dpr_2.0/assets/images/2022/3/11/85891451-b148-4e95-b9f2-0bf42e82e51a1646993148063-Don_t-Miss-These-Offers.jpg'
+      src='https://fashionova-bucket.s3.us-west-1.amazonaws.com/Screenshot_20250205-185643_1.jpg'
       height={'100px'} alt='banner' />
 
     <div className='col-12 p-2'>
@@ -32,7 +32,7 @@ function WomenBody() {
 
 
     <img className='col-11 mt-4 m-4'
-      src='https://assets.myntassets.com/f_webp,w_980,c_limit,fl_progressive,dpr_2.0/assets/images/2022/3/11/d153ee75-3464-44f7-9041-4afd29d95a751646993148101-Unbelievable-Deals.jpg'
+      src='https://fashionova-bucket.s3.us-west-1.amazonaws.com/Screenshot_20250205-185710_1.jpg'
       height={'150px'} alt='banner' />
 
     <div className='col-12 p-2'>
