@@ -31,10 +31,13 @@ jobs:
         run: |
           # Download the Docker Scout binary
           curl -L https://github.com/docker/scout-cli/releases/download/v0.1.0/docker-scout-linux-amd64 -o /usr/local/bin/docker-scout
-          # Check the file to confirm it's a valid binary
+          # Check if the file is downloaded correctly and inspect it
+          ls -l /usr/local/bin/docker-scout
           file /usr/local/bin/docker-scout
-          # Make it executable
+          # If the file is correctly downloaded, make it executable
           sudo chmod +x /usr/local/bin/docker-scout
+          # Confirm if docker-scout is executable
+          /usr/local/bin/docker-scout --version
 
       - name: Docker Scout Scan
         run: |
