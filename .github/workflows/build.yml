@@ -56,10 +56,10 @@ jobs:
         run: docker pull sholly333/boutique-store:latest
 
       - name: Deploy to Container
-        run: docker run -d --name game -p 3000:3000 sholly333/boutique-store:latest
+        run: docker run -d --name game-new -p 3000:3000 sholly333/boutique-store:latest
 
       - name: Update Kubeconfig
-        run: aws eks --region us-west-1 update-kubeconfig --name EKS_CLOUD
+        run: aws eks --region ap-south-1 update-kubeconfig --name EKS_CLOUD
 
       - name: List Files
         run: ls -al  # Check for deployment-service.yml
