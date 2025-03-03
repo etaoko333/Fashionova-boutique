@@ -142,7 +142,7 @@ Commit changes
 **Step 4: Setting up Github workflow**
 - .github/workflows/build.yml and add the generated code from sonarqube
 - paste the content into the workflow file
-`name: Build,Analyze,scan
+```name: Build,Analyze,scan
 on:
  push:
  branches:
@@ -160,7 +160,7 @@ jobs:
  uses: sonarsource/sonarqube-scan-action@master
  env:
  SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
- SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}`
+ SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}``
 
 - Commit changes
 - Now click on Actions
@@ -210,7 +210,7 @@ Once the token is generated, it will be displayed on the screen. Copy the token 
 
 - In your workflow file, you can use the access token to log in to Docker Hub. Here's how you can include it in your .github/workflows/deploy.yml file:
 
-`name: Build
+``name: Build
 on:
 push:
 branches:
@@ -263,8 +263,7 @@ run: aws eks - region ap-south-1 update-kubeconfig - name EKS_CLOUD
 - name: List Files
 run: ls -al # Check for deployment-service.yml
 - name: Deploy to Kubernetes
-run: kubectl apply -f deployment-service.yml`
-
+run: kubectl apply -f deployment-service.yml``
 
 
 output
