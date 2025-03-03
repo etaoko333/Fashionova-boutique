@@ -50,29 +50,32 @@ sudo chmod a+r /etc/apt/keyrings/docker.gpg`
   "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu \
   $(. /etc/os-release &amp;&amp; echo "$VERSION_CODENAME") stable" | \
   sudo tee /etc/apt/sources.list.d/docker.list &gt; /dev/null
+
 sudo apt-get update
-sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
-curl -sSfL https://raw.githubusercontent.com/docker/scout-cli/main/install.sh | sh -s -- -b /usr/local/bin
-sudo usermod -aG docker ubuntu
-newgrp docker
-sudo chmod 777 /var/run/docker.sock
-Provide executable versions
+`sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin`
+`curl -sSfL https://raw.githubusercontent.com/docker/scout-cli/main/install.sh | sh -s -- -b /usr/local/bin`
+- sudo usermod -aG docker ubuntu
+- newgrp docker
+- sudo chmod 777 /var/run/docker.sock
+**Provide executable versions**
 sudo chmod 777 docker-setup.sh`
 
 `sh docker-setup.sh`
+
 **Create Script for other packages**
 `vi script-packages.sh`
 Script
-`#!/bin/bash
+``#!/bin/bash
 sudo apt update -y
 sudo touch /etc/apt/keyrings/adoptium.asc
 sudo wget -O /etc/apt/keyrings/adoptium.asc https://packages.adoptium.net/artifactory/api/gpg/key/public
 echo "deb [signed-by=/etc/apt/keyrings/adoptium.asc] https://packages.adoptium.net/artifactory/deb $(awk -F= '/^VERSION_CODENAME/{print$2}' /etc/os-release) main" | sudo tee /etc/apt/sources.list.d/adoptium.list
 sudo apt update -y
 sudo apt install temurin-17-jdk -y
-/usr/bin/java --version
+/usr/bin/java --version``
+
 # Install Terraform
-sudo apt install wget -y
+``sudo apt install wget -y
 wget -O- https://apt.releases.hashicorp.com/gpg | sudo gpg --dearmor -o /usr/share/keyrings/hashicorp-archive-keyring.gpg
 echo "deb [signed-by=/usr/share/keyrings/hashicorp-archive-keyring.gpg] https://apt.releases.hashicorp.com $(lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/hashicorp.list
 sudo apt update &amp;&amp; sudo apt install terraform
@@ -91,20 +94,21 @@ sudo ./aws/install
 curl -fsSL https://deb.nodesource.com/gpgkey/nodesource.gpg.key | sudo gpg --dearmor -o /usr/share/keyrings/nodesource-archive-keyring.gpg
 echo "deb [signed-by=/usr/share/keyrings/nodesource-archive-keyring.gpg] https://deb.nodesource.com/node_16.x focal main" | sudo tee /etc/apt/sources.list.d/nodesource.list
 sudo apt update
-sudo apt install -y nodejs
+sudo apt install -y nodejs``
 
 #!/bin/bash
 
 **Give executable permissions for script and run it**
 `sudo chmod 777 script-packages.sh`
 `sh script-packages.sh`
+
 **check the package version**
-docker - version
-terraform - version
-aws - version
-kubectl version
-node -v
-java - version
+- docker - version
+- terraform - version
+- aws - version
+- kubectl version
+- node -v
+-java - version
 
 - Run the Sonarqube container
 `docker run -d --name sonar -p 9000:9000 sonarqube:lts-community`
